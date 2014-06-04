@@ -19,6 +19,13 @@ main = hakyll $ do
       >>= loadAndApplyTemplate "templates/default.html" defaultContext
       >>= relativizeUrls
 
+  match "wp-event-plugins.html" $ do
+    route idRoute
+    compile $ do
+      getResourceBody
+        >>= loadAndApplyTemplate "templates/default.html" defaultContext
+        >>= relativizeUrls
+
   match "index.html" $ do
     route idRoute
     compile $ do
